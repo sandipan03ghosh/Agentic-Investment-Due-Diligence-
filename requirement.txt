@@ -1,0 +1,38 @@
+# Core orchestration
+langgraph>=1.1.4
+langgraph-checkpoint>=4.2.0
+langchain-core>=1.6.1
+pydantic>=2.12.5
+pydantic-settings>=2.13.1
+python-dotenv>=1.2.2
+
+# LLM providers (pick one via LLM_PROVIDER in .env; groq is the default)
+langchain-groq>=1.1.2
+langchain-openai>=1.1.12
+langchain-google-genai>=4.4.0
+
+# Web research (Tavily)
+langchain-tavily>=0.2.17
+langchain-community>=0.4.1
+
+# Image generation (Hugging Face)
+huggingface_hub>=1.8.0
+Pillow>=12.3.0
+
+# Frontend
+streamlit>=1.56.0
+pandas>=3.0.2
+
+# Vector DB (Weaviate) and embedding model
+weaviate-client>=4.7.0,<5.0.0
+sentence-transformers>=5.0.0
+
+# Ingestion API
+fastapi>=0.115.0
+starlette>=1.0.1
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.27
+sqlalchemy>=2.0.48
+pypdf>=6.7.5
+python-docx>=1.1.0
+langchain-text-splitters>=1.1.1

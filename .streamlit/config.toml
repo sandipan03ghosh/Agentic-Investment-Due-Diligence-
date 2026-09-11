@@ -1,0 +1,14 @@
+# Project-local Streamlit config. Picked up automatically by `streamlit run`.
+
+[server]
+# Bind to loopback only -- app is not reachable from the local network / campus WiFi.
+address = "127.0.0.1"
+# Disable the source-file watcher. It walks every imported module to find files to
+# hot-reload; when it probes `transformers` (a transitive dep of sentence-transformers),
+# transformers' lazy imports fire and try to import torchvision, which isn't installed,
+# producing a wall of harmless ModuleNotFoundError tracebacks on every start.
+# "none" stops that entirely. Trade-off: edits to .py files need a manual restart.
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false

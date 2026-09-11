@@ -1,0 +1,39 @@
+{
+  "collection": "due_diligence_documents",
+  "cases": 2,
+  "avg_precision_proxy": 1.0,
+  "results": [
+    {
+      "query": "What is the investment case for a company with an affordable valuation and feature-rich competitive position?",
+      "expected_keywords": ["valuation", "affordable", "feature-rich"],
+      "found_keywords": ["valuation", "affordable", "feature-rich"],
+      "precision_proxy": 1.0,
+      "top_hits": [
+        {
+          "title": "sample_brief",
+          "url": "sample_data/sample_brief.md",
+          "snippet": "# Sample Due Diligence Report...",
+          "published_at": null,
+          "source": "vector_kb",
+          "score": 0.87
+        }
+      ]
+    },
+    {
+      "query": "Summarize the market overview for the sample due diligence report.",
+      "expected_keywords": ["market", "overview", "growing"],
+      "found_keywords": ["market", "overview", "growing"],
+      "precision_proxy": 1.0,
+      "top_hits": [
+        {
+          "title": "sample_brief",
+          "url": "sample_data/sample_brief.md",
+          "snippet": "# Sample Due Diligence Report...",
+          "published_at": null,
+          "source": "vector_kb",
+          "score": 0.84
+        }
+      ]
+    }
+  ]
+}

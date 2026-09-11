@@ -1,0 +1,31 @@
+services:
+  weaviate:
+    image: cr.weaviate.io/semitechnologies/weaviate:1.38.14
+    restart: unless-stopped
+    ports:
+      # Bound to loopback only -- anonymous access is still enabled below for local
+      # dev convenience, so this is what actually keeps the vector store from being
+      # reachable by anything other than processes on this machine. For any shared
+      # or non-local deployment, also set AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED to
+      # "false" and configure an API key (WEAVIATE_API_KEY in config.py already
+      # supports it on the client side).
+      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:50051:50051"
+    environment:
+      QUERY_DEFAULTS_LIMIT: "25"
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "true"
+      PERSISTENCE_DATA_PATH: "/var/lib/weaviate"
+      DEFAULT_VECTORIZER_MODULE: "none"
+      ENABLE_MODULES: ""
+      CLUSTER_HOSTNAME: "node1"
+    volumes:
+      - weaviate_data:/var/lib/weaviate
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/v1/.well-known/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 20s
+
+volumes:
+  weaviate_data:

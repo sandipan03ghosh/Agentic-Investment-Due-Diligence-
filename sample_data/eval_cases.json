@@ -1,0 +1,10 @@
+[
+  {
+    "query": "What is the investment case for a company with an affordable valuation and feature-rich competitive position?",
+    "expected_keywords": ["valuation", "affordable", "feature-rich"]
+  },
+  {
+    "query": "Summarize the market overview for the sample due diligence report.",
+    "expected_keywords": ["market", "overview", "growing"]
+  }
+]
